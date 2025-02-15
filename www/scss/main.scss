@@ -1,0 +1,56 @@
+@import "fridge";
+@import "variables";
+@import "button";
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #F1F1F1;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  color: $black;
+
+  .page-wrap {
+    width: 100%;
+    height: 100%;
+
+    .container {
+      margin: 0 auto;
+    }
+  }
+
+  h1 {
+    font-family: $font-family-headline;
+    color: $black;
+    font-size: 3.5rem;
+    font-weight: 600;
+    letter-spacing: 0.035em;
+    line-height: 1.2em;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  h2 {
+    font-family: $font-family-headline;
+    color: $black;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    line-height: 1.2em;
+    text-transform: capitalize;
+    margin: 0;
+  }
+
+  .alert {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    width: 100%;
+    margin: 0 auto;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+}

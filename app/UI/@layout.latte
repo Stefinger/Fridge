@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" type="image/x-icon" href="{$basePath}/images/favicon/favicon.ico">
+	<link href="{$basePath}/libs/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+	<link href="{$basePath}/libs/dropzone/dist/dropzone.css"  rel="stylesheet">
+	<link href="{$basePath}/libs/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet" />
+	<link href="{$basePath}/libs/prismjs/themes/prism-okaidia.css" rel="stylesheet">
+	<link href="{$basePath}/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="{$basePath}/css/main.css">
+
+	{*	--- Fonts --- *}
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+	<title>Fridge</title>
+</head>
+
+<body>
+	<div n:if="$flashes">
+		<div class="alert alert-success d-flex justify-content-center" role="alert">
+			<div n:foreach="$flashes as $flash" n:class="text-success, flash, $flash->type">{$flash->message}</div>
+		</div>
+	</div>
+
+	<div class="page-wrap">
+		<section class="fridge">
+			{include content}
+		</section>
+	</div>
+
+	{block scripts}
+		<script src="{$basePath}/libs/jquery/dist/jquery.min.js"></script>
+		<script src="{$basePath}/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="{$basePath}/libs/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+		<script src="{$basePath}/libs/feather-icons/dist/feather.min.js"></script>
+		<script src="{$basePath}/libs/prismjs/prism.js"></script>
+		<script src="{$basePath}/libs/apexcharts/dist/apexcharts.min.js"></script>
+		<script src="{$basePath}/libs/dropzone/dist/min/dropzone.min.js"></script>
+		<script src="{$basePath}/libs/prismjs/plugins/toolbar/prism-toolbar.min.js"></script>
+		<script src="{$basePath}/libs/prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+		<script src="{$basePath}/js/theme.min.js"></script>
+		<script src="{$basePath}/js/fridge.js"></script>
+	{/block}
+</body>
+</html>

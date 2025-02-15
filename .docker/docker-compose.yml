@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  php:
+    container_name: fridge
+    image: fridge_php
+    build: build/php
+    volumes:
+      - ../:/var/www/html/
+    ports:
+      - 80:80
+    environment:
+      - NETTE_DEBUG=1
+    links:
+      - database
+
+  database:
+    container_name: fridge_db
+    image: fridge_db
+    build: build/database
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: fridge
+      MYSQL_PASSWORD: fridge
+      MYSQL_DATABASE: fridge
+    volumes:
+    - ./build/database/fridge.sql:/docker-entrypoint-initdb.d/fridge.sql
+
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - 8080:80
+    environment:
+      - PMA_HOST=database
+      - PMA_USER=root
+      - PMA_PASSWORD=root
